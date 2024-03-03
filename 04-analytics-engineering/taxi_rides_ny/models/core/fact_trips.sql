@@ -56,7 +56,7 @@ inner join dim_zones as dropoff_zone
 on trips_unioned.dropoff_locationid = dropoff_zone.locationid
 
 
--- dbt build --select <model.sql> --vars '{'is_test_run: false}'
+-- dbt build --select <model.sql> --vars '{'is_test_run': 'false'}'
 {% if var('is_test_run', default=true) %}
 
   limit 100
